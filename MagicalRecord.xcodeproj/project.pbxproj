@@ -197,8 +197,6 @@
 		9007B14D1C5A416500C64F94 /* MagicalRecord+ShorthandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9007B1491C5A416500C64F94 /* MagicalRecord+ShorthandTests.m */; };
 		90171E1B17C329CC00E7084A /* FixtureHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CF9B6C17498B5C008D9D13 /* FixtureHelpers.m */; };
 		90171E1C17C329CD00E7084A /* FixtureHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CF9B6C17498B5C008D9D13 /* FixtureHelpers.m */; };
-		90171E1D17C32ACE00E7084A /* TestModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 9099490817C2F3D400BC2B5C /* TestModel.xcdatamodeld */; };
-		90171E1E17C32AD300E7084A /* TestModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 9099490817C2F3D400BC2B5C /* TestModel.xcdatamodeld */; };
 		9021D9E31AFB34D6001C80BA /* MagicalRecordTestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9021D9E21AFB34D6001C80BA /* MagicalRecordTestHelpers.m */; };
 		9021D9E41AFB34D6001C80BA /* MagicalRecordTestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9021D9E21AFB34D6001C80BA /* MagicalRecordTestHelpers.m */; };
 		9021D9E51AFB34D6001C80BA /* MagicalRecordTestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9021D9E21AFB34D6001C80BA /* MagicalRecordTestHelpers.m */; };
@@ -1489,6 +1487,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = C721C7A013D0A3750097AB6F;
@@ -1630,7 +1629,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90171E1D17C32ACE00E7084A /* TestModel.xcdatamodeld in Resources */,
 				C7CF9B5317498985008D9D13 /* SampleJSONDataForImport.json in Resources */,
 				C7CF9B5517498985008D9D13 /* SingleEntityRelatedToManyMappedEntitiesUsingListOfPrimaryKeys.json in Resources */,
 				C7CF9B5717498985008D9D13 /* SingleEntityRelatedToManyMappedEntitiesUsingMappedPrimaryKey.json in Resources */,
@@ -1649,7 +1647,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90171E1E17C32AD300E7084A /* TestModel.xcdatamodeld in Resources */,
 				C7CF9B5417498985008D9D13 /* SampleJSONDataForImport.json in Resources */,
 				C7CF9B5617498985008D9D13 /* SingleEntityRelatedToManyMappedEntitiesUsingListOfPrimaryKeys.json in Resources */,
 				C7CF9B5817498985008D9D13 /* SingleEntityRelatedToManyMappedEntitiesUsingMappedPrimaryKey.json in Resources */,
@@ -2341,7 +2338,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
@@ -2379,7 +2376,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "-DNEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.magicalpanda.${PRODUCT_NAME:rfc1034identifier}";
@@ -2399,7 +2396,6 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
@@ -2415,7 +2411,6 @@
 				DSTROOT = /tmp/libMagicalRecord.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
@@ -2472,7 +2467,6 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Tests/Support/MagicalRecordTests-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
 				OTHER_LDFLAGS = (
@@ -2493,7 +2487,6 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "Tests/Support/MagicalRecordTests-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
 				OTHER_LDFLAGS = (
