@@ -117,14 +117,3 @@
 - (void) MR_deleteObjects:(MR_nonnull id <NSFastEnumeration>)objects;
 
 @end
-
-#pragma mark - Deprecated Methods — DO NOT USE
-@interface NSManagedObjectContext (MagicalRecordDeprecated)
-
-+ (MR_nonnull NSManagedObjectContext *) MR_contextWithoutParent MR_DEPRECATED_WILL_BE_REMOVED_IN_PLEASE_USE("4.0", "MR_newPrivateQueueContext");
-+ (MR_nonnull NSManagedObjectContext *) MR_newContext MR_DEPRECATED_WILL_BE_REMOVED_IN_PLEASE_USE("4.0", "MR_context");
-+ (MR_nonnull NSManagedObjectContext *) MR_newContextWithParent:(MR_nonnull NSManagedObjectContext *)parentContext MR_DEPRECATED_WILL_BE_REMOVED_IN_PLEASE_USE("4.0", "MR_contextWithParent:");
-+ (MR_nonnull NSManagedObjectContext *) MR_newContextWithStoreCoordinator:(MR_nonnull NSPersistentStoreCoordinator *)coordinator MR_DEPRECATED_WILL_BE_REMOVED_IN_PLEASE_USE("4.0", "MR_contextWithStoreCoordinator:");
-
-
-@end

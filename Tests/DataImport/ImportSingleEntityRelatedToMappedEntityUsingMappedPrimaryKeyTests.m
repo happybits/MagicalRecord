@@ -35,7 +35,7 @@
 
 - (void)testImportMappedEntityRelatedViaToOneRelationship
 {
-    SingleEntityRelatedToMappedEntityUsingMappedPrimaryKey *entity = [[self testEntityClass] MR_importFromObject:self.testEntityData];
+    SingleEntityRelatedToMappedEntityUsingMappedPrimaryKey *entity = [[self testEntityClass] MR_importFromObject:self.testEntityData inContext:[NSManagedObjectContext MR_defaultContext]];
 
     XCTestExpectation *expectation = [self expectationWithDescription:@"Wait for managed object context"];
 
@@ -71,7 +71,7 @@
 
 - (void)testImportMappedEntityUsingPrimaryRelationshipKey
 {
-    SingleEntityRelatedToMappedEntityUsingMappedPrimaryKey *entity = [[self testEntityClass] MR_importFromObject:self.testEntityData];
+    SingleEntityRelatedToMappedEntityUsingMappedPrimaryKey *entity = [[self testEntityClass] MR_importFromObject:self.testEntityData inContext:[NSManagedObjectContext MR_defaultContext]];
 
     XCTestExpectation *expectation = [self expectationWithDescription:@"Wait for managed object context"];
 

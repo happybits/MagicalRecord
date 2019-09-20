@@ -22,6 +22,7 @@
     __block NSManagedObjectID *childObjectID;
 
     NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
 
     [defaultContext MR_saveWithBlock:^(NSManagedObjectContext *localContext) {
         SingleEntityWithNoRelationships *insertedObject = [SingleEntityWithNoRelationships MR_createEntityInContext:localContext];
@@ -46,10 +47,11 @@
 
         expect(parentObject).toNot.beNil();
 
-        SingleEntityWithNoRelationships *rootObject = (SingleEntityWithNoRelationships *)[[NSManagedObjectContext MR_rootSavingContext] objectWithID:childObjectID];
+        [rootSavingContext performBlockAndWait:^{
+            SingleEntityWithNoRelationships *rootObject = (SingleEntityWithNoRelationships *)[rootSavingContext objectWithID:childObjectID];
 
-        expect(rootObject).toNot.beNil();
-
+            expect(rootObject).toNot.beNil();
+        }];
     }];
 }
 

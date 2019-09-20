@@ -23,7 +23,7 @@
 
 - (void)testDataImport
 {
-    SingleEntityRelatedToMappedEntityWithNestedMappedAttributes *entity = [[self testEntityClass] MR_importFromObject:self.testEntityData];
+    SingleEntityRelatedToMappedEntityWithNestedMappedAttributes *entity = [[self testEntityClass] MR_importFromObject:self.testEntityData inContext:[NSManagedObjectContext MR_defaultContext]];
 
     XCTestExpectation *expectation = [self expectationWithDescription:@"Wait for managed object context"];
 

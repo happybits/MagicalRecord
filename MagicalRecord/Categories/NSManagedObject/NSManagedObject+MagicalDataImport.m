@@ -8,7 +8,6 @@
 #import "NSObject+MagicalDataImport.h"
 #import "NSAttributeDescription+MagicalDataImport.h"
 #import "NSEntityDescription+MagicalDataImport.h"
-#import "NSManagedObjectContext+MagicalThreading.h"
 #import "NSManagedObject+MagicalDataImport.h"
 #import "NSManagedObject+MagicalFinders.h"
 #import "NSManagedObject+MagicalRecord.h"
@@ -322,22 +321,6 @@ NSString * const kMagicalRecordImportAttributeUseDefaultValueWhenNotPresent = @"
     }];
 
     return managedObject;
-}
-
-+ (id) MR_importFromObject:(id)objectData
-{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    return [self MR_importFromObject:objectData inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
-#pragma clang diagnostic pop
-}
-
-+ (NSArray *) MR_importFromArray:(NSArray *)listOfObjectData
-{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    return [self MR_importFromArray:listOfObjectData inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
-#pragma clang diagnostic pop
 }
 
 + (NSArray *) MR_importFromArray:(NSArray *)listOfObjectData inContext:(NSManagedObjectContext *)context

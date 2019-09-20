@@ -38,7 +38,7 @@
 
 - (void)testImportMappedEntityViaToOneRelationship
 {
-    SingleEntityRelatedToMappedEntityUsingDefaults *entity = [[self testEntityClass] MR_importFromObject:self.testEntityData];
+    SingleEntityRelatedToMappedEntityUsingDefaults *entity = [[self testEntityClass] MR_importFromObject:self.testEntityData inContext:[NSManagedObjectContext MR_defaultContext]];
 
     XCTestExpectation *expectation = [self expectationWithDescription:@"Wait for managed object context"];
 
@@ -52,7 +52,7 @@
 
         XCTAssert(stringRange.length > 0, @"Could not find 'sample json file' in '%@'", string);
 
-        NSNumber *numberOfEntities = [MappedEntity MR_numberOfEntities];
+        NSNumber *numberOfEntities = [MappedEntity MR_numberOfEntitiesWithContext:[NSManagedObjectContext MR_defaultContext]];
         XCTAssertEqualObjects(numberOfEntities, @1, @"Expected 1 entity, got %@", numberOfEntities);
 
         [expectation fulfill];

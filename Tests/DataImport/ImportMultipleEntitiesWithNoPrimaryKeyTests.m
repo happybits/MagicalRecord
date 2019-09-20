@@ -23,7 +23,7 @@
 {
     [super setUp];
     
-    self.arrayOfTestEntity = [SingleEntityWithNoRelationships MR_importFromArray:self.testEntityData];
+    self.arrayOfTestEntity = [SingleEntityWithNoRelationships MR_importFromArray:self.testEntityData inContext:[NSManagedObjectContext MR_defaultContext]];
 }
 
 - (void)tearDown

@@ -79,9 +79,9 @@
 
     NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
 
+    [self p_createSampleData:numberOfTestEntitiesToCreate inContext:context];
+
     [context performBlockAndWait:^{
-        [self p_createSampleData:numberOfTestEntitiesToCreate inContext:context];
-        
         NSNumber *entityCount = [SingleRelatedEntity MR_numberOfEntitiesWithContext:context];
         XCTAssertEqualObjects(entityCount, @(numberOfTestEntitiesToCreate), @"Expected numberOfEntities to be %zd, got %@", numberOfTestEntitiesToCreate, entityCount);
     }];
@@ -93,9 +93,9 @@
 
     NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
 
-    [context performBlockAndWait:^{
-        [self p_createSampleData:numberOfTestEntitiesToCreate inContext:context];
+    [self p_createSampleData:numberOfTestEntitiesToCreate inContext:context];
 
+    [context performBlockAndWait:^{
         NSPredicate *searchFilter = [NSPredicate predicateWithFormat:@"mappedStringAttribute = '1'"];
         NSNumber *entityCount = [SingleRelatedEntity MR_numberOfEntitiesWithPredicate:searchFilter inContext:context];
         XCTAssertEqualObjects(entityCount, @5, @"Should return a count of 5, got %@", entityCount);

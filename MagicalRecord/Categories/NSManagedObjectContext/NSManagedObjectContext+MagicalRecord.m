@@ -7,7 +7,6 @@
 
 #import "NSManagedObjectContext+MagicalRecord.h"
 #import "NSManagedObjectContext+MagicalObserving.h"
-#import "NSManagedObjectContext+MagicalThreading.h"
 #import "NSPersistentStoreCoordinator+MagicalRecord.h"
 #import "MagicalRecord+ErrorHandling.h"
 #import "MagicalRecord+iCloud.h"
@@ -242,10 +241,6 @@ static id MagicalRecordUbiquitySetupNotificationObserver;
 {
     [self MR_setDefaultContext:nil];
     [self MR_setRootSavingContext:nil];
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    [self MR_clearNonMainThreadContextsCache];
-#pragma clang diagnostic pop
 }
 
 - (void) MR_obtainPermanentIDsBeforeSaving
@@ -319,31 +314,6 @@ static id MagicalRecordUbiquitySetupNotificationObserver;
     }];
 
     MRLogInfo(@"Set root saving context: %@", MagicalRecordRootSavingContext);
-}
-
-@end
-
-#pragma mark - Deprecated Methods — DO NOT USE
-@implementation NSManagedObjectContext (MagicalRecordDeprecated)
-
-+ (NSManagedObjectContext *) MR_contextWithoutParent
-{
-    return [self MR_newPrivateQueueContext];
-}
-
-+ (NSManagedObjectContext *) MR_newContext
-{
-    return [self MR_context];
-}
-
-+ (NSManagedObjectContext *) MR_newContextWithParent:(NSManagedObjectContext *)parentContext
-{
-    return [self MR_contextWithParent:parentContext];
-}
-
-+ (NSManagedObjectContext *) MR_newContextWithStoreCoordinator:(NSPersistentStoreCoordinator *)coordinator
-{
-    return [self MR_contextWithStoreCoordinator:coordinator];
 }
 
 @end

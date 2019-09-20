@@ -22,7 +22,7 @@
 
 - (void)testImportMappedAttributeUsingSecondaryMappedKeyName
 {
-    SingleEntityRelatedToMappedEntityWithSecondaryMappings *entity = [[self testEntityClass] MR_importFromObject:self.testEntityData];
+    SingleEntityRelatedToMappedEntityWithSecondaryMappings *entity = [[self testEntityClass] MR_importFromObject:self.testEntityData inContext:[NSManagedObjectContext MR_defaultContext]];
 
     [entity.managedObjectContext performBlockAndWait:^{
         XCTAssertNotNil(entity, @"Entity should not be nil");
