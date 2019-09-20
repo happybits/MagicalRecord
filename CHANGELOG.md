@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 3.0-mp
+
+* Delete deprecated methods. (MagicalRecord's `-[NSManagedObjectContext save]` was shadowing `-[NSManagedObjectContext save:]` when imported into Swift, making the later impossible to call.)
+
 ## Version 2.3.2
 
 This release fixes an issue where the OS X framework was being built with instrumentation data, and included in the binary builds posted to GitHub. It contains no other fixes over MagicalRecord v2.3.1.
