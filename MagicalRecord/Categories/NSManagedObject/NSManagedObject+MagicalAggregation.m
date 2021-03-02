@@ -88,7 +88,7 @@
     [request setPropertiesToFetch:properties];
     [request setResultType:NSDictionaryResultType];    
     
-    NSDictionary *resultsDictionary = [self MR_executeFetchRequestAndReturnFirstObject:request inContext:context];
+    NSDictionary *resultsDictionary = (NSDictionary *)[self MR_executeFetchRequestAndReturnFirstObject:request inContext:context];
     
     return [resultsDictionary objectForKey:@"result"];
 }
