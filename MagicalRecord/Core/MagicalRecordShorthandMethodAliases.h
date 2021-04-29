@@ -16,15 +16,6 @@
 @end
 
 
-@interface NSManagedObject (MagicalRecord_DataImportShortHand)
-
-- (BOOL) importValuesForKeysWithObject:(MR_nonnull id)objectData;
-+ (MR_nonnull instancetype) importFromObject:(MR_nonnull id)data inContext:(MR_nonnull NSManagedObjectContext *)context;
-+ (MR_nonnull MR_NSArrayOfNSManagedObjects) importFromArray:(MR_nonnull MR_GENERIC(NSArray, NSDictionary *) *)listOfObjectData inContext:(MR_nonnull NSManagedObjectContext *)context;
-
-@end
-
-
 @interface NSManagedObject (MagicalFindersShortHand)
 
 + (MR_nullable MR_NSArrayOfNSManagedObjects) findAllInContext:(MR_nonnull NSManagedObjectContext *)context;
